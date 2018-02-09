@@ -5,3 +5,7 @@
 !*/cache/index.html
 !*/cache/.htaccess
 /nbproject/private/
+.idea/workspace.xml
+.idea/CrunchAPC.iml
+.idea/vcs.xml
+.idea/modules.xml
