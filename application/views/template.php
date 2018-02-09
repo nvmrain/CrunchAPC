@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -20,7 +21,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">MountainDewgong</a>
+					<a class="navbar-brand" href="#">Crunch a PC</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse">
@@ -32,11 +33,11 @@
 							<a href="">Catalog</a>
 						</li>
 					</ul>
-					</div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
-				</nav>
-				<div id="container">
-					{content}
-				</div>
-			</body>
-		</html>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div class="container">
+			{content}
+		</div>
+	</body>
+</html>
