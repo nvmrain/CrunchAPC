@@ -3,15 +3,40 @@
 	<head>
 		<meta charset="utf-8">
 		<title>{pagetitle}</title>
-        <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
+		<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 	</head>
 	<body>
-        <div id="container">
-			{content}
-			<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. 
-				{ci_version}</p>
-        </div>
-	</body>
-</html>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">MountainDewgong</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="">Catalog</a>
+						</li>
+					</ul>
+					</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+				<div id="container">
+					{content}
+				</div>
+			</body>
+		</html>
