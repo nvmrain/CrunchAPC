@@ -1,6 +1,15 @@
 <?php
 
 class Sets extends CSV_Model {
+
+    public $id;
+    public $description;
+    public $cpuId;
+    public $ramId;
+    public $gpuId;
+    public $fanId;
+    public $psuId;
+
     function __construct() {
         parent::__construct('../data/Sets.csv', 'id');
     }
@@ -13,16 +22,6 @@ class Sets extends CSV_Model {
      * fanId
      * psuId
      */
-
-     function get($key1, $key2)
-     {
-         return !isset($this->_data[$key]) ? null : $this->_data[$key];
-     }
-
-     function all()
-     {
-         return $this->_data;
-     }
 }
 
  ?>
