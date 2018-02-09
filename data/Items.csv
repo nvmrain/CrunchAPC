@@ -1,0 +1,16 @@
+id,description,categoryId,speed,power,cost
+1,Intel I5,1,6,-4,6
+2,Intel I7,1,8,-5,9
+3,Intel I9,1,10,-6,15
+4,4GB 2133Hz,2,2,-1,1
+5,8GB 2666Hz,2,4,-2,2
+6,16GB 3200Hz,2,8,-4,4
+7,Geforce GTX 1060,3,6,-5,7
+8,Geforce GTX 1070,3,7,-6,9
+9,Geforce GTX 1080,3,9,-7,12
+10,Intel Stock,4,0,-1,0
+11,Cooler Master Hyper 612,4,1,-1,1
+12,NZXT Kraken x62,4,2,-2,3
+13,500W,5,0,12,3
+14,650W,5,0,16,4
+15,850W,5,0,20,6
