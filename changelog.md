@@ -1,6 +1,8 @@
 
 
 # Comp4711 Assignment 1
+18-02-08 | RY | include bootstrap css
+18-02-08 | RY | add navbar to template.php
 
 ## Members
 **Captain:** Tyler Da Costa (TD)
