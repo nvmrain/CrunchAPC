@@ -1,0 +1,4 @@
+id,description,cpuId,ramId,gpuId,fanId,psuId
+1,Budget Set,1,4,7,10,13
+2,High-end Set,3,6,9,12,15
+3,In-Progress,2,,9,,
