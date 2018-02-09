@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -32,11 +33,11 @@
 							<a href="">Catalog</a>
 						</li>
 					</ul>
-					</div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
-				</nav>
-				<div id="container">
-					{content}
-				</div>
-			</body>
-		</html>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div class="container">
+			{content}
+		</div>
+	</body>
+</html>
