@@ -1,6 +1,9 @@
 <?php
 class Catalog extends Application {
 
+    /**
+     * Controller function for the catalog page
+     */
     public function index()
     {
         // 1. Load the data:
