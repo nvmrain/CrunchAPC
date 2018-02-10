@@ -19,6 +19,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-02-09 | GM | Added comments to model files
+
 18-02-09 | JA | added info controller to interface with the csv db.
 
 18-02-09 | RY | add homepage and image holders for displying the idea.
@@ -26,6 +28,8 @@ Most recent changes should go at the top of the changelog
 18-02-09 | RY | will modify after you decide what kind of data you want to pass(JSON or Array)
 
 18-02-09 | RY | fix a bug in template.php page
+
+18-02-09 | GM | Added Categories, Items, and Sets models and supporting CI files
 
 18-02-08 | RY | include bootstrap css
 
