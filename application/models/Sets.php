@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Sets model that stores collections of items.
+ */
 class Sets extends CSV_Model {
 
     public $id;
@@ -10,18 +13,12 @@ class Sets extends CSV_Model {
     public $fanId;
     public $psuId;
 
+    /**
+     * Constructs a csv model using the Sets.csv file.
+     */
     function __construct() {
         parent::__construct('../data/Sets.csv', 'id');
     }
-
-    /**
-     * id
-     * cpuId
-     * ramId
-     * gpuId
-     * fanId
-     * psuId
-     */
 }
 
  ?>
