@@ -1,9 +1,9 @@
 <?php
 
+/**
+ * Items model that stores the various types of items for all categories.
+ */
 class Items extends CSV_Model {
-    function __construct() {
-        parent::__construct('../data/Items.csv', 'id');
-    }
 
     public $id;
     public $description;
@@ -13,13 +13,11 @@ class Items extends CSV_Model {
     public $cost;
 
     /**
-     * id
-     * description
-     * categoryId
-     * speed
-     * power
-     * cost
+     * Constructs the csv model using the Items.csv file.
      */
+    function __construct() {
+        parent::__construct('../data/Items.csv', 'id');
+    }
 }
 
  ?>
