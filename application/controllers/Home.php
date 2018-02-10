@@ -21,6 +21,7 @@ class Home extends Application
 	{
 		$this->data['pagebody'] = 'home';
 		$this->render(); 
+		
 	}
 
 }
