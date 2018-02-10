@@ -19,6 +19,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-02-10 | JY | added catalogue controller and view
+
 18-02-09 | GM | Added comments to model files
 
 18-02-09 | JA | added info controller to interface with the csv db.
