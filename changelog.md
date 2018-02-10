@@ -19,6 +19,7 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-02-10 | JY | added cata
 18-02-09 | JA | added info controller to interface with the csv db.
 
 18-02-09 | RY | add homepage and image holders for displying the idea.
