@@ -50,7 +50,7 @@ class Catalog extends Application {
     private function printBody()
     {
         $this->data['cc'] .= '<div class="row">';
-        for($i = 1; $i < 5; $i++){
+        for($i = 1; $i <= 5; $i++){
             $this->printCategory($i);
         }
 
@@ -79,7 +79,7 @@ class Catalog extends Application {
      */
     private function printAccessory($value)
     {
-        $this->data['cc'] .= '<div class="col-sm-4">';
+        $this->data['cc'] .= '<div class="col-md-4">';
 
         $this->data['cc'] .= '<p>';
         $this->data['cc'] .= 'Code: ';
@@ -91,8 +91,8 @@ class Catalog extends Application {
         $this->data['cc'] .= $value->description;
         $this->data['cc'] .= '</p>';
 
-        $this->data['cc'] .= '<img src="';
-        $this->data['cc'] .= $value->id;
+        $this->data['cc'] .= '<img class="catalog-img" src="assets/img/';
+        $this->data['cc'] .= $value->description;
         $this->data['cc'] .= '.png">';
 
         $this->data['cc'] .= '<p>';
