@@ -17,6 +17,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-02-12 | TD | Fixed navigation on navigation bar.
+
 18-02-12 | GM | Fixed image paths, added styling in catalog
 
 18-02-11 | TD | Fixed motherboard image name in home controller.
