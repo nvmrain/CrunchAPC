@@ -49,3 +49,8 @@
     left: 689px;
     border: 5px solid green;
 }
+
+.catalog-img {
+    max-width: 300px;
+    height: auto;
+}
