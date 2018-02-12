@@ -1,9 +1,11 @@
+//add clcik listener to submit button
 setTimeout(function(){
 	$('.btn#comfirm-select').on('click', function() {
 		selectBuild();
 	})
 }, 0)
 
+//attach image to picture box div
 function selectBuild() {
 	var id = $('#selectBuildID').val();
 	$.ajax({
