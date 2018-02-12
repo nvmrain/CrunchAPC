@@ -42,7 +42,7 @@ class Home extends Application
 			$images = "<div class='h1' style='text-align: center'>Please choose a build!</div>";
 			return $images;
 		}
-		$images = '<img src="/assets/images/MotherBoard.png" alt="montherboard" class="montherboard">';
+		$images = '<img src="/assets/img/MotherBoard.png" alt="motherboard" class="motherboard">';
 		
 
 		//get all data from sets and items

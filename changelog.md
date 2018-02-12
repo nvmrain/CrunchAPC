@@ -17,6 +17,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-02-11 | TD | Fixed motherboard image path on homepage and typo in css class name
+
 18-02-11 | RY | Added comments to homePageHelper.js
 
 18-02-11 | RY | Hook catalog page on nvabar
