@@ -17,6 +17,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-04-05 | TD | Added Travis CI integrations.
+
 18-04-05 | TD | Added PhpUnit and Composer.
 
 18-02-12 | TD | Fixed navigation on navigation bar.
