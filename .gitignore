@@ -8,3 +8,5 @@
 .idea/workspace.xml
 .idea/CrunchAPC.iml
 .idea/vcs.xml
+/vendor
+composer.lock
