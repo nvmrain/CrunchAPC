@@ -17,6 +17,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-04-05 | TD | Added sessions for user roles.
+
 18-04-05 | GM | Added validation for model properties.
 
 18-04-05 | TD | Added Travis CI integrations.
