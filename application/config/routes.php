@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['select/(:any)'] = 'home/selectBuild/$1';
 $route['edit/(:any)'] = 'mtce/edit/$1';
+$route['editCategory/(:any)'] = 'mtce/editCategory/$1';

@@ -12,6 +12,8 @@ class Mtce extends Application {
 
         // 2. Make the data available to the view
         $this->data['pagebody'] = 'catalog';
+
+        $role = $this->session->userdata('userrole');
         //$this->data['categories'] = $this->catagories->getAll();
         //$this->data['accessories'] = $this->accessories->getAll();
 
@@ -49,12 +51,14 @@ class Mtce extends Application {
      */
     private function printBody()
     {
+        $role = $this->session->userdata('userrole');
+        $this->data['cc'] .= '<h1 style="text-align: center;">Welcome ' . $role . '!</h1>';
         $this->data['cc'] .= '<div class="row">';
         for($i = 1; $i <= 5; $i++){
             $this->printCategory($i);
         }
 
-        $this->data['cc'] .= '</div>';
+        $this->data['cc'] .= '</div><hr/>';
     }
 
     /**
@@ -63,13 +67,21 @@ class Mtce extends Application {
      */
     private function printCategory($i)
     {
-        $this->data['cc'] .= '<h1>';
-        $this->data['cc'] .=  $this->data['categories'][$i]->name;
-        $this->data['cc'] .= '</h1>';
+        $role = $this->session->userdata('userrole');
+        if ($role == ROLE_ADMIN) {
+            $this->data['cc'] .= '<div class="row"><a class="h1" src="editCategory/' . $this->data['categories'][$i]->id . '">' . $this->data['categories'][$i]->name .'</a></div><hr/>';
+        }
+        else {
+            $this->data['cc'] .= '<h1>';
+            $this->data['cc'] .=  $this->data['categories'][$i]->name;
+            $this->data['cc'] .= '</h1>';
+        }
+        $this->data['cc'] .= '<div class="row">';
         foreach ($this->data['accessories'][$i] as $value)
         {
             $this->printAccessory($value);
         }
+        $this->data['cc'] .= '</div>';
 
     }
 
@@ -79,7 +91,6 @@ class Mtce extends Application {
      */
     private function printAccessory($value)
     {
-        
         $this->data['cc'] .= '<div class="col-md-4">';
 
         $this->data['cc'] .= '<p>';
@@ -111,20 +122,50 @@ class Mtce extends Application {
         $this->data['cc'] .= $value->cost;
         $this->data['cc'] .= '</p>';
 
-        $this->data['cc'] .= '<a class="btn btn-primary" href="edit/' . $value->id . '">Edit</a>';
+        $role = $this->session->userdata('userrole');
+        if ($role == ROLE_ADMIN) {
+            $this->data['cc'] .= '<a class="btn btn-primary" href="edit/' . $value->id . '">Edit</a>';
+        }
 
         $this->data['cc'] .= '</div>';
     }
 
-    /**
-    * Edit an item
-    *  @param $id of item
-    *  @param $desc of item
-    */
-    /*private function edit($id, $desc)
+    public function editCategory($id = null)
     {
+        if ($id == null)
+            redirect('/mtce');
+        $category = $this->categories->get($id);
+        /*$task = $this->tasks->get($id);*/
+        $this->session->set_userdata('category', $category);
+        $this->showEditCategory();
 
-    }*/
+    }
+
+    public function showEditCategory() {
+        $this->load->helper('form');
+        $category = $this->session->userdata('category');
+        /*var_dump($item);*/
+        $this->data['id'] = $category->id;  
+
+        // if no errors, pass an empty message
+        if ( ! isset($this->data['error']))
+            $this->data['error'] = '';  
+
+        $cname = array(
+            'name' => 'name',
+            'value' => $category->name,
+            'class' => 'form-control'
+        );
+
+        $cfields = array(
+            'fname'      => form_label('Category Name', 'class="control-label"') . form_input($cname),
+            'zsubmit'    => form_submit('submit', 'Submit', 'class="btn btn-primary"'),
+        );
+        $this->data = array_merge($this->data, $cfields);    
+
+        $this->data['pagebody'] = 'editCategory';
+        $this->render();
+    }
 
     // Edit an item
     // Render Edit view
@@ -135,7 +176,15 @@ class Mtce extends Application {
             redirect('/mtce');
         $item = $this->items->get($id);
         /*$task = $this->tasks->get($id);*/
+        $this->session->set_userdata('item', $item);
+        $this->showit();
+    }
+
+    public function showit()
+    {
         $this->load->helper('form');
+        $item = $this->session->userdata('item');
+        /*var_dump($item);*/
         $this->data['id'] = $item->id;  
 
         // if no errors, pass an empty message
@@ -147,24 +196,27 @@ class Mtce extends Application {
                 . ".png' width='300'>";
 
         $speed = array(
+            'name' => 'speed',
             'value' => $item->speed,
             'class' => 'form-control'
         );
         $power = array(
+            'name' => 'power',
             'value' => $item->power,
             'class' => 'form-control'
         );
         $cost = array(
+            'name' => 'cost',
             'value' => $item->cost,
             'class' => 'form-control'
         );
         $description = array(
+            'name' => 'description',
             'value' => $item->description,
             'class' => 'form-control'
         );
 
-        $submit = array(
-        );
+        
 
         $fields = array(
             'fdescritption'      => form_label('Description', 'class="control-label"') . form_input($description),
@@ -185,7 +237,8 @@ class Mtce extends Application {
     // Forget about this edit
     // Need to modify
     function cancel() {
-        /*$this->session->unset_userdata('task');*/
+        $this->session->unset_userdata('item');
+        $this->session->unset_userdata('category');
         redirect('/mtce');
     }
 
@@ -193,34 +246,68 @@ class Mtce extends Application {
     public function submit()
     {
         // setup for validation
-        // no validation yet
+        // since we check data during add/update, we don't need rules
         /*$this->load->library('form_validation');
-        $this->form_validation->set_rules($this->tasks->rules());  */ 
+        $this->form_validation->set_rules($this->items->rules());   */
+
+
 
         // retrieve & update data transfer buffer
-        /*$task = (array) $this->session->userdata('task');*/
-        /*$task = array_merge($task, $this->input->post());*/
-        // $task = (object) $task;  // convert back to object
-        // $this->session->set_userdata('task', (object) $task);   
+        $item = (array) $this->session->userdata('item');
+        $item = array_merge($item, $this->input->post());
+        
+        $item = (object) $item;  // convert back to object
+        $this->session->set_userdata('item', (object) $item);   
 
         // validate away
-        if ($this->form_validation->run())
+       
+        if (empty($item->id))
         {
-            if (empty($task->id))
-            {
-                $task->id = $this->tasks->highest() + 1;
-                $this->tasks->add($task);
-                $this->alert('Task ' . $task->id . ' added', 'success');
-            } else
-            {
-                $this->tasks->update($task);
-                $this->alert('Task ' . $task->id . ' updated', 'success');
-            }
+            $item->id = $this->items->highest() + 1;
+            $this->items->add($item);
+            $this->alert('Item ' . $item->id . ' added', 'success');
         } else
         {
-            $this->alert('<strong>Validation errors!<strong><br>' . validation_errors(), 'danger');
+            $this->items->update($item);
+            $this->alert('Item ' . $item->id . ' updated', 'success');
         }
+      
+        // $this->alert('<strong>Validation errors!<strong><br>' . validation_errors(), 'danger');
         $this->showit();
+    }
+
+    // handle category form submission
+    public function submitCategory()
+    {
+        // setup for validation
+        // since we check data during add/update, we don't need rules
+        /*$this->load->library('form_validation');
+        $this->form_validation->set_rules($this->items->rules());   */
+
+
+
+        // retrieve & update data transfer buffer
+        $category = (array) $this->session->userdata('category');
+        $category = array_merge($category, $this->input->post());
+        
+        $category = (object) $category;  // convert back to object
+        $this->session->set_userdata('category', (object) $category);   
+
+        // validate away
+       
+        if (empty($category->id))
+        {
+            $category->id = $this->categories->highest() + 1;
+            $this->categorys->add($category);
+            $this->alert('Item ' . $category->id . ' added', 'success');
+        } else
+        {
+            $this->categories->update($category);
+            $this->alert('Item ' . $category->id . ' updated', 'success');
+        }
+      
+        // $this->alert('<strong>Validation errors!<strong><br>' . validation_errors(), 'danger');
+        $this->showEditCategory();
     }
 
     
