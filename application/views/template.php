@@ -32,6 +32,9 @@
 						<li>
 							<a href="/catalog">Catalog</a>
 						</li>
+						<li>
+							<a href="/mtce">Maintenance</a>
+						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
