@@ -17,6 +17,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-04-07 | TD | Fixed PHP header information bug.
+
 18-04-07 | RY | Fix Link bug.
 
 18-04-06 | RY | Finish Maintainence Page and edit pages for items and categories.
