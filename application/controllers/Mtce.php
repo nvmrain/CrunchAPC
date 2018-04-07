@@ -69,7 +69,7 @@ class Mtce extends Application {
     {
         $role = $this->session->userdata('userrole');
         if ($role == ROLE_ADMIN) {
-            $this->data['cc'] .= '<div class="row"><a class="h1" src="editCategory/' . $this->data['categories'][$i]->id . '">' . $this->data['categories'][$i]->name .'</a></div><hr/>';
+            $this->data['cc'] .= '<div class="row"><a class="h1" href="editCategory/' . $this->data['categories'][$i]->id . '">' . $this->data['categories'][$i]->name .'</a></div><hr/>';
         }
         else {
             $this->data['cc'] .= '<h1>';
