@@ -11,3 +11,5 @@
 /vendor
 composer.lock
 /tmp
+vendor/
+composer.lock
