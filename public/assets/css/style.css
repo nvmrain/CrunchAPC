@@ -6,7 +6,7 @@
 
 .motherboard {
 	position: absolute;
-    top: 170px;
+    top: 270px;
     left: 40px;
 }
 
@@ -18,13 +18,13 @@
 .cpu-img {
     position: absolute;
     left: 465px;
-    top: 417px;
+    top: 517px;
     border: 5px solid green;
 }
 
 .gpu-img {
 	position: absolute;
-    top: 764px;
+    top: 864px;
     left: 169px;
     border: 5px solid green;
 }
@@ -32,20 +32,20 @@
 .cooler-img {
 	position: absolute;
     left: 339px;
-    top: 233px;
+    top: 333px;
     border: 5px solid green;
 }
 
 .psu-img {
 	position: absolute;
-    top: 674px;
+    top: 774px;
     left: 868px;
     border: 5px solid green;
 }
 
 .memory-img {
 	position: absolute;
-    top: 315px;
+    top: 415px;
     left: 689px;
     border: 5px solid green;
 }
