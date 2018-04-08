@@ -9,7 +9,7 @@ class CategoryTest extends TestCase {
 	static function setUpBeforeClass() {
 		CategoryTest::$CI = &get_instance();
 		CategoryTest::$CI->load->model('categories');
-		CategoryTest::$backup = CategoryTest::$CI->categories->first();
+		CategoryTest::$backup = clone CategoryTest::$CI->categories->first();
 	}
 
 	function setUp() {
