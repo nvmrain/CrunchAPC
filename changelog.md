@@ -17,6 +17,8 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-04-08 | GM | Added unit tests for all models.
+
 18-04-07 | JA | Added drop downs for catalog items, set creation, and saving
 
 18-04-07 | TD | Fixed PHP header information bug.
