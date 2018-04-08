@@ -17,6 +17,16 @@ YY-MM-DD | Name abbreviation (XX) | Feature description
 Most recent changes should go at the top of the changelog
 
 ## Changelog
+18-04-07 | JA | Added drop downs for catalog items, set creation, and saving
+
+18-04-07 | TD | Fixed PHP header information bug.
+
+18-04-07 | RY | Fix Link bug.
+
+18-04-06 | RY | Finish Maintainence Page and edit pages for items and categories.
+
+18-04-05 | TD | Added sessions for user roles.
+
 18-04-05 | GM | Added validation for model properties.
 
 18-04-05 | TD | Added Travis CI integrations.

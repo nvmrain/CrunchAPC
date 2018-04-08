@@ -1,4 +1,4 @@
-	<?php
+<?php
 
 /**
  * Categories model that stores the various categories of items.

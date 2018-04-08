@@ -32,6 +32,17 @@
 						<li>
 							<a href="/catalog">Catalog</a>
 						</li>
+						<li>
+							<a href="/mtce">Maintenance</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Roles<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="/roles/actor/User">User</a></li>
+                  				<li><a href="/roles/actor/Admin">Admin</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
@@ -41,5 +52,6 @@
 		</div>
 	</body>
 	<script src="/assets/js/jquery-3.3.1.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
 	<script src="/assets/js/homePageHelper.js"></script>
 </html>
