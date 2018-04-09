@@ -104,7 +104,7 @@ class Mtce extends Application {
         $this->data['cc'] .= '</p>';
 
         $this->data['cc'] .= '<img class="catalog-img" src="assets/img/';
-        $this->data['cc'] .= $value->description;
+        $this->data['cc'] .= $value->id;
         $this->data['cc'] .= '.png">';
 
         $this->data['cc'] .= '<p>';
